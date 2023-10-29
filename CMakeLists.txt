@@ -29,6 +29,7 @@ set(CMAKE_CXX_CLANG_TIDY clang-tidy -header-filter=.*)
 include_directories(PRIVATE .)
 
 add_subdirectory(util)
+add_subdirectory(img)
 add_subdirectory(imgtool)
 #add_subdirectory(fluid)
 #add_subdirectory(tracecmp)
