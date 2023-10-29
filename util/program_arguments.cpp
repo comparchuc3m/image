@@ -8,6 +8,8 @@ namespace util {
 
   std::string to_string(image_operation op) {
     switch (op) {
+      case image_operation::copy:
+        return "copy";
       case image_operation::histogram:
         return "histogram";
       case image_operation::gausss:
@@ -20,6 +22,7 @@ namespace util {
   }
 
   image_operation parse_operation(std::string const & str) {
+    if (str == "copy") { return image_operation::copy; }
     if (str == "histogram") { return image_operation::histogram; }
     if (str == "gauss") { return image_operation::gausss; }
     if (str == "grayscale") { return image_operation::grayscale; }

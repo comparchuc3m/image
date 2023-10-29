@@ -7,6 +7,7 @@
 namespace util {
 
   enum class image_operation : uint8_t {
+    copy,
     histogram,
     grayscale,
     gausss
