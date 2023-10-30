@@ -4,6 +4,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <chrono>
 
 void copy(std::istream & is, std::ostream & os) {
   img::image input_image;
@@ -12,19 +13,30 @@ void copy(std::istream & is, std::ostream & os) {
   input_image.write(os);
 }
 
-void grayscale(std::istream & is, std::ostream & os) {
+auto grayscale(std::istream & is, std::ostream & os) {
+  using namespace std::chrono;
   img::image input_image;
   input_image.read(is);
   std::cout << input_image.metadata();
+  auto start = high_resolution_clock::now();
   input_image.to_grayscale();
+  auto stop = high_resolution_clock::now();
+  auto diff = duration_cast<microseconds>(stop-start);
+  std::cout << "Ellapsed: " << diff.count() << " us\n";
   input_image.write(os);
+  return diff;
 }
 
 void compute_histogram(std::istream & is, std::ostream & os) {
+  using namespace std::chrono;
   img::image input_image;
   input_image.read(is);
   std::cout << input_image.metadata();
+  auto start = high_resolution_clock::now();
   auto histo = input_image.generate_histogram();
+  auto stop = high_resolution_clock::now();
+  auto diff = duration_cast<microseconds>(stop-start);
+  std::cout << "Ellapsed: " << diff.count() << " us\n";
   histo.write(os);
 }
 
