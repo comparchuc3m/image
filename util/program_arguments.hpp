@@ -10,7 +10,6 @@ namespace util {
     copy,
     histogram,
     grayscale,
-    gausss
   };
 
   std::string to_string(image_operation op);

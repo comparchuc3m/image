@@ -12,8 +12,6 @@ namespace util {
         return "copy";
       case image_operation::histogram:
         return "histogram";
-      case image_operation::gausss:
-        return "gauss";
       case image_operation::grayscale:
         return "grayscale";
       default:
@@ -24,7 +22,6 @@ namespace util {
   image_operation parse_operation(std::string const & str) {
     if (str == "copy") { return image_operation::copy; }
     if (str == "histogram") { return image_operation::histogram; }
-    if (str == "gauss") { return image_operation::gausss; }
     if (str == "grayscale") { return image_operation::grayscale; }
     throw std::invalid_argument{"unknown operation: " + str};
   }

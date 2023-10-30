@@ -5,6 +5,7 @@
 
 #include "pixel.hpp"
 #include "image_metadata.hpp"
+#include "histogram.hpp"
 
 namespace img {
 
@@ -16,6 +17,7 @@ namespace img {
       void write(std::ostream & os) const;
 
       void to_grayscale();
+      [[nodiscard]] histogram generate_histogram() const;
 
       [[nodiscard]] image_metadata metadata() const { return metadata_; }
 

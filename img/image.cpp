@@ -52,6 +52,16 @@ namespace img {
     for (int i = 0; i < max; ++i) { pixels_[i] = pixels_[i].to_gray(); }
   }
 
+  histogram image::generate_histogram() const {
+    histogram histo;
+    const int pixel_count = metadata_.width() * metadata_.height();
+    for (int i = 0; i < pixel_count; ++i) {
+      histo.add_color(pixels_[i]);
+    }
+    return histo;
+  }
+
+
   pixel image::get_pixel(int r, int c) const {
     return pixels_[index(r, c)];
   }
