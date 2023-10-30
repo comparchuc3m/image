@@ -15,6 +15,8 @@ namespace img {
       void read(std::istream & is);
       void write(std::ostream & os) const;
 
+      void to_grayscale();
+
       [[nodiscard]] image_metadata metadata() const { return metadata_; }
 
     private:
