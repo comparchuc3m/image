@@ -1,11 +1,11 @@
 #ifndef IMAGE_IMAGE_HPP
 #define IMAGE_IMAGE_HPP
 
-#include <vector>
-
-#include "pixel.hpp"
-#include "image_metadata.hpp"
 #include "histogram.hpp"
+#include "image_metadata.hpp"
+#include "pixel.hpp"
+
+#include <vector>
 
 namespace img {
 
@@ -23,7 +23,7 @@ namespace img {
 
     private:
       [[nodiscard]] pixel get_pixel(int r, int c) const;
-      void set_pixel(int r, int c, pixel p) ;
+      void set_pixel(int r, int c, pixel p);
       [[nodiscard]] int index(int r, int c) const;
 
     private:
