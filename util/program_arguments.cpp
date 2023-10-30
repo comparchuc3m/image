@@ -14,6 +14,10 @@ namespace util {
         return "histogram";
       case image_operation::grayscale:
         return "grayscale";
+      case image_operation::par_histogram:
+        return "par_histogram";
+      case image_operation::par_grayscale:
+        return "par_grayscale";
       default:
         throw std::invalid_argument{"unexpected operation"};
     }
@@ -23,6 +27,8 @@ namespace util {
     if (str == "copy") { return image_operation::copy; }
     if (str == "histogram") { return image_operation::histogram; }
     if (str == "grayscale") { return image_operation::grayscale; }
+    if (str == "par_histogram") { return image_operation::par_histogram; }
+    if (str == "par_grayscale") { return image_operation::par_grayscale; }
     throw std::invalid_argument{"unknown operation: " + str};
   }
 

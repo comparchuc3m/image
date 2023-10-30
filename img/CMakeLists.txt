@@ -4,6 +4,7 @@ add_library(img
         normalized_pixel.cpp
         image_header.cpp
         image_metadata.cpp
+        parallel_image.cpp
         image.cpp
         histogram.cpp)
 
